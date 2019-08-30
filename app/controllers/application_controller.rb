@@ -42,6 +42,7 @@ class ApplicationController < Sinatra::Base
 
   post "/login" do
     ##your code here
+  user = User.find_by(params[:username])
   if params[:username].empty?
       redirect to '/failure'
     end
